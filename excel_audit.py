@@ -1,10 +1,10 @@
 import pandas as pd
-import openai
-from dotenv import load_dotenv
+from openpyxl import load_workbook
+from openpyxl.styles import PatternFill
 
 # load excel files
-df_UBR = pd.read_excel("D:\First_Complex_Project\excel_audit_process\Excel_Audit_Project.xlsx", sheet_name="Sheet1")
-df_CVS = pd.read_excel("D:\First_Complex_Project\excel_audit_process\Excel_Audit_Project.xlsx", sheet_name="Sheet2")
+df_UBR = pd.read_excel("Excel_Audit_Project.xlsx", sheet_name="Sheet1")
+df_CVS = pd.read_excel("Excel_Audit_Project.xlsx", sheet_name="Sheet2")
 
 print(df_UBR)
 print() 
@@ -55,6 +55,27 @@ df_merged.loc[df_merged["POD_Recd"] == "Yes", "MI_Eligibility"] = "Eligible"
 # df_merged["Check_vendor_name_UBR"] = df_merged["Check_vendor_name_UBR"].map({True: "Match", False: "Mismatch"})
 
 # save to new excel file
-df_merged.to_excel("D:\First_Complex_Project\excel_audit_process\MI_Audit_UBR_audited.xlsx", index=False)
+df_merged.to_excel("MI_Audit_UBR_audited.xlsx", index=False)
 
 # Summary detailed report
+
+wb = load_workbook(filename='MI_Audit_UBR_audited.xlsx')
+sheet = wb.active
+
+red_fill = PatternFill(start_color="FF0000", end_color="FF0000", fill_type="solid")
+yellow_fill = PatternFill(start_color="FFFF00", end_color="FFFF00", fill_type="solid")
+
+for row in sheet.iter_rows(min_row=2, min_col=12, max_col=16):
+
+    for cell in row:
+        if cell.value == "Mismatch":
+            cell.fill = red_fill
+        elif cell.value == "Course Not Found":
+            cell.fill = yellow_fill
+
+
+wb.save("MI_Audit_UBR_audited.xlsx")
+wb.close()
+
+
+
