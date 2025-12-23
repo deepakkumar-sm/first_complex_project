@@ -51,7 +51,7 @@ df_merged.loc[df_merged["POD_Recd"] == "Yes", "MI_Eligibility"] = "Eligible"
 # save to new excel file
 df_merged.to_excel("MI_Audit_UBR_audited.xlsx", index=False)
 
-
+# styling the excel output fle
 
 wb = load_workbook(filename='MI_Audit_UBR_audited.xlsx')
 sheet = wb.active
