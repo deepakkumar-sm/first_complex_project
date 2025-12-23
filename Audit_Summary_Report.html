@@ -1,0 +1,475 @@
+
+<html>
+<head><title>Audit Summary Report</title>
+<style>
+body { font-family: Arial, sans-serif; margin: 40px; background: #f9fafb; }
+h1, h2 { color: #1f2937; }
+.summary { background: #ecf0f1; padding: 16px; border-radius: 8px; margin-bottom: 24px; }
+.kpi { margin: 8px 0; }
+table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+th, td { border: 1px solid #e5e7eb; padding: 8px; text-align: center; }
+th { background: #111827; color: #ffffff; }
+.mismatched table { background: #efced0; }
+.course_not_found table { background: #f1daaf; }
+.not_eligible table { background: #ebd8d5; }
+</style>
+</head>
+<body>
+  <h1>Audit Summary Report</h1>
+  <div class="summary">
+    <div class="kpi"><strong>Date/Time of Audit:</strong> 2025-12-23 14:17:28</div>
+    <div class="kpi"><strong>Total Records Audited:</strong> 12</div>
+    <div class="kpi"><strong>Mismatched Records:</strong> 8</div>
+    <div class="kpi"><strong>Course Not Found:</strong> 4</div>
+    <div class="kpi"><strong>Not Eligible Records:</strong> 4</div>
+  </div>
+
+  <h2>Mismatched Records</h2><h4> - differences found in course amount/currency/term/vendor</h4>
+  <div class="mismatched">
+    <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>S_No</th>
+      <th>UBR</th>
+      <th>Course_Name</th>
+      <th>Delivery_Date</th>
+      <th>Room</th>
+      <th>Currency</th>
+      <th>Amount</th>
+      <th>Course_Term</th>
+      <th>POD_Recd</th>
+      <th>invoice_recd</th>
+      <th>vendor_name</th>
+      <th>Check_Currency_UBR</th>
+      <th>Check_Amount_UBR</th>
+      <th>Check_Course_Term_UBR</th>
+      <th>Check_vendor_name_UBR</th>
+      <th>MI_Eligibility</th>
+      <th>Currency_CVS</th>
+      <th>Amount_CVS</th>
+      <th>Course_Term_CVS</th>
+      <th>vendor_name_CVS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>UBR1</td>
+      <td>Python Basics 1</td>
+      <td>2026-05-28</td>
+      <td>Abc1</td>
+      <td>USD</td>
+      <td>1061</td>
+      <td>per student</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>xyz123</td>
+      <td>Mismatch</td>
+      <td>Mismatch</td>
+      <td>Mismatch</td>
+      <td>Match</td>
+      <td>Eligible</td>
+      <td>INR</td>
+      <td>342.0</td>
+      <td>Per Learner</td>
+      <td>xyz123</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>UBR2</td>
+      <td>Python Basics 2</td>
+      <td>2026-02-02</td>
+      <td>Abc2</td>
+      <td>GBP</td>
+      <td>1172</td>
+      <td>per day</td>
+      <td>No</td>
+      <td>No</td>
+      <td>xyz2567</td>
+      <td>Mismatch</td>
+      <td>Mismatch</td>
+      <td>Mismatch</td>
+      <td>Match</td>
+      <td>Not Eligible</td>
+      <td>INR</td>
+      <td>318.0</td>
+      <td>Per Learner</td>
+      <td>xyz2567</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>UBR5</td>
+      <td>Python Basics 5</td>
+      <td>2026-07-02</td>
+      <td>Abc5</td>
+      <td>INR</td>
+      <td>1198</td>
+      <td>per student</td>
+      <td>No</td>
+      <td>No</td>
+      <td>xyz2567</td>
+      <td>Match</td>
+      <td>Mismatch</td>
+      <td>Mismatch</td>
+      <td>Mismatch</td>
+      <td>Not Eligible</td>
+      <td>INR</td>
+      <td>101.0</td>
+      <td>Per Learner</td>
+      <td>xyz123</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>UBR6</td>
+      <td>Python Basics 6</td>
+      <td>2026-12-09</td>
+      <td>Abc6</td>
+      <td>EUR</td>
+      <td>1025</td>
+      <td>per day</td>
+      <td>No</td>
+      <td>Yes</td>
+      <td>xyz12343</td>
+      <td>Mismatch</td>
+      <td>Mismatch</td>
+      <td>Mismatch</td>
+      <td>Mismatch</td>
+      <td>Not Eligible</td>
+      <td>INR</td>
+      <td>198.0</td>
+      <td>Per Learner</td>
+      <td>xyz2567</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>UBR7</td>
+      <td>Python Basics 7</td>
+      <td>2026-02-03</td>
+      <td>Abc7</td>
+      <td>USD</td>
+      <td>1040</td>
+      <td>per day</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>xyz14787</td>
+      <td>Mismatch</td>
+      <td>Mismatch</td>
+      <td>Mismatch</td>
+      <td>Mismatch</td>
+      <td>Eligible</td>
+      <td>INR</td>
+      <td>114.0</td>
+      <td>Per Learner</td>
+      <td>xyz12343</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>UBR8</td>
+      <td>Python Basics 8</td>
+      <td>2026-12-06</td>
+      <td>Abc8</td>
+      <td>EUR</td>
+      <td>1040</td>
+      <td>per day</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>xyz123</td>
+      <td>Mismatch</td>
+      <td>Mismatch</td>
+      <td>Mismatch</td>
+      <td>Mismatch</td>
+      <td>Eligible</td>
+      <td>INR</td>
+      <td>231.0</td>
+      <td>Per Learner</td>
+      <td>xyz14787</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>UBR10</td>
+      <td>Python Basics 3</td>
+      <td>2026-06-27</td>
+      <td>Abc10</td>
+      <td>EUR</td>
+      <td>1050</td>
+      <td>per day</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>xyz2567</td>
+      <td>Mismatch</td>
+      <td>Mismatch</td>
+      <td>Mismatch</td>
+      <td>Mismatch</td>
+      <td>Eligible</td>
+      <td>INR</td>
+      <td>348.0</td>
+      <td>Per Learner</td>
+      <td>xyz12343</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>UBR11</td>
+      <td>Python Basics 4</td>
+      <td>2026-10-22</td>
+      <td>Abc11</td>
+      <td>EUR</td>
+      <td>1113</td>
+      <td>per student</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>xyz2567</td>
+      <td>Mismatch</td>
+      <td>Mismatch</td>
+      <td>Mismatch</td>
+      <td>Mismatch</td>
+      <td>Eligible</td>
+      <td>INR</td>
+      <td>294.0</td>
+      <td>Per Day</td>
+      <td>xyz14787</td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+  <h2>Course Not Found Records</h2><h4> - course is not found in the base report</h4>
+  <div class="course_not_found">
+    <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>S_No</th>
+      <th>UBR</th>
+      <th>Course_Name</th>
+      <th>Delivery_Date</th>
+      <th>Room</th>
+      <th>Currency</th>
+      <th>Amount</th>
+      <th>Course_Term</th>
+      <th>POD_Recd</th>
+      <th>invoice_recd</th>
+      <th>vendor_name</th>
+      <th>Check_Currency_UBR</th>
+      <th>Check_Amount_UBR</th>
+      <th>Check_Course_Term_UBR</th>
+      <th>Check_vendor_name_UBR</th>
+      <th>MI_Eligibility</th>
+      <th>Currency_CVS</th>
+      <th>Amount_CVS</th>
+      <th>Course_Term_CVS</th>
+      <th>vendor_name_CVS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>3</td>
+      <td>UBR3</td>
+      <td>Python Basics 10</td>
+      <td>2026-02-02</td>
+      <td>Abc3</td>
+      <td>USD</td>
+      <td>1065</td>
+      <td>per student</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>xyz2567</td>
+      <td>Course Not Found</td>
+      <td>Course Not Found</td>
+      <td>Course Not Found</td>
+      <td>Course Not Found</td>
+      <td>Eligible</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>UBR4</td>
+      <td>Python Basics 11</td>
+      <td>2026-05-04</td>
+      <td>Abc4</td>
+      <td>USD</td>
+      <td>1006</td>
+      <td>per student</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>xyz2567</td>
+      <td>Course Not Found</td>
+      <td>Course Not Found</td>
+      <td>Course Not Found</td>
+      <td>Course Not Found</td>
+      <td>Eligible</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>UBR9</td>
+      <td>Python Basics 9</td>
+      <td>2026-08-22</td>
+      <td>Abc9</td>
+      <td>EUR</td>
+      <td>1080</td>
+      <td>per day</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>xyz2567</td>
+      <td>Course Not Found</td>
+      <td>Course Not Found</td>
+      <td>Course Not Found</td>
+      <td>Course Not Found</td>
+      <td>Eligible</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>UBR12</td>
+      <td>Python Basics 12</td>
+      <td>2026-06-28</td>
+      <td>Abc12</td>
+      <td>USD</td>
+      <td>1079</td>
+      <td>per day</td>
+      <td>No</td>
+      <td>Yes</td>
+      <td>xyz123</td>
+      <td>Course Not Found</td>
+      <td>Course Not Found</td>
+      <td>Course Not Found</td>
+      <td>Course Not Found</td>
+      <td>Not Eligible</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+  <h2>Not Eligible Records</h2><h4> - POD is missing and Invoice hasn't been recieved yet</h4>
+  <div class="not_eligible">
+    <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>S_No</th>
+      <th>UBR</th>
+      <th>Course_Name</th>
+      <th>Delivery_Date</th>
+      <th>Room</th>
+      <th>Currency</th>
+      <th>Amount</th>
+      <th>Course_Term</th>
+      <th>POD_Recd</th>
+      <th>invoice_recd</th>
+      <th>vendor_name</th>
+      <th>Check_Currency_UBR</th>
+      <th>Check_Amount_UBR</th>
+      <th>Check_Course_Term_UBR</th>
+      <th>Check_vendor_name_UBR</th>
+      <th>MI_Eligibility</th>
+      <th>Currency_CVS</th>
+      <th>Amount_CVS</th>
+      <th>Course_Term_CVS</th>
+      <th>vendor_name_CVS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>UBR2</td>
+      <td>Python Basics 2</td>
+      <td>2026-02-02</td>
+      <td>Abc2</td>
+      <td>GBP</td>
+      <td>1172</td>
+      <td>per day</td>
+      <td>No</td>
+      <td>No</td>
+      <td>xyz2567</td>
+      <td>Mismatch</td>
+      <td>Mismatch</td>
+      <td>Mismatch</td>
+      <td>Match</td>
+      <td>Not Eligible</td>
+      <td>INR</td>
+      <td>318.0</td>
+      <td>Per Learner</td>
+      <td>xyz2567</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>UBR5</td>
+      <td>Python Basics 5</td>
+      <td>2026-07-02</td>
+      <td>Abc5</td>
+      <td>INR</td>
+      <td>1198</td>
+      <td>per student</td>
+      <td>No</td>
+      <td>No</td>
+      <td>xyz2567</td>
+      <td>Match</td>
+      <td>Mismatch</td>
+      <td>Mismatch</td>
+      <td>Mismatch</td>
+      <td>Not Eligible</td>
+      <td>INR</td>
+      <td>101.0</td>
+      <td>Per Learner</td>
+      <td>xyz123</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>UBR6</td>
+      <td>Python Basics 6</td>
+      <td>2026-12-09</td>
+      <td>Abc6</td>
+      <td>EUR</td>
+      <td>1025</td>
+      <td>per day</td>
+      <td>No</td>
+      <td>Yes</td>
+      <td>xyz12343</td>
+      <td>Mismatch</td>
+      <td>Mismatch</td>
+      <td>Mismatch</td>
+      <td>Mismatch</td>
+      <td>Not Eligible</td>
+      <td>INR</td>
+      <td>198.0</td>
+      <td>Per Learner</td>
+      <td>xyz2567</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>UBR12</td>
+      <td>Python Basics 12</td>
+      <td>2026-06-28</td>
+      <td>Abc12</td>
+      <td>USD</td>
+      <td>1079</td>
+      <td>per day</td>
+      <td>No</td>
+      <td>Yes</td>
+      <td>xyz123</td>
+      <td>Course Not Found</td>
+      <td>Course Not Found</td>
+      <td>Course Not Found</td>
+      <td>Course Not Found</td>
+      <td>Not Eligible</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+</body>
+</html>
